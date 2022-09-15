@@ -24,8 +24,6 @@ TOAST UI Calendar applies Google Analytics (GA) to collect statistics on the use
 To disable GA, refer to the docs below.
 
 - [TOAST UI Calendar](/docs/en/guide/getting-started.md#disable-to-collect-hostname-for-google-analyticsga)
-- [TOAST UI Calendar for React](/apps/react-calendar/docs/en/guide/getting-started.md#disable-to-collect-hostname-for-google-analyticsga)
-- [TOAST UI Calendar for Vue](/apps/vue-calendar/docs/en/guide/getting-started.md#disable-to-collect-hostname-for-google-analyticsga)
 
 ## 🌏 Browser Support
 
