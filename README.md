@@ -7,35 +7,15 @@
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg)](https://github.com/nhn/tui.calendar/labels/help%20wanted)
 [![code with hearth by NHN Cloud](https://img.shields.io/badge/%3C%2F%3E%20with%20%E2%99%A5%20by-NHN_Cloud-ff1414.svg)](https://github.com/nhn)
 
-## 🚩 Table of Contents
-
-- [📦 Packages](#-packages)
-- [📙 Documents](#-documents)
-- [Collect statistics on the use of open source](#collect-statistics-on-the-use-of-open-source)
-- [📅 Features](#-features)
-  - [✨ Monthly, Weekly, Daily and Various View Types](#-monthly-weekly-daily-and-various-view-types)
-  - [Easy to Use: Dragging and Resizing a Schedule](#easy-to-use-dragging-and-resizing-a-schedule)
-  - [Ready to Use: Default Popups](#ready-to-use-default-popups)
-- [🎨 Other Features](#-other-features)
-- [💬 Contributing](#-contributing)
-- [🌏 Browser Support](#-browser-support)
-- [🔩 Dependencies](#-dependencies)
-- [🍞 TOAST UI Family](#-toast-ui-family)
-- [🚀 Used By](#-used-by)
-- [📜 License](#-license)
-
 ## 📦 Packages
 
 The functionality of TOAST UI Calendar is available when using the Plain JavaScript, React, Vue Component.
 
 - [@toast-ui/calendar](/apps/calendar) - Plain JavaScript component implemented by [NHN Cloud](https://github.com/nhn).
-- [@toast-ui/react-calendar](/apps/react-calendar) - React wrapper component implemented by [NHN Cloud](https://github.com/nhn).
-- [@toast-ui/vue-calendar](/apps/vue-calendar) - Vue wrapper component implemented by [NHN Cloud](https://github.com/nhn).
 
 ## 📙 Documents
 
 - [English](./docs/README.md)
-- [Korean](./docs/ko/README.md)
 
 ## Collect statistics on the use of open source
 
@@ -46,47 +26,6 @@ To disable GA, refer to the docs below.
 - [TOAST UI Calendar](/docs/en/guide/getting-started.md#disable-to-collect-hostname-for-google-analyticsga)
 - [TOAST UI Calendar for React](/apps/react-calendar/docs/en/guide/getting-started.md#disable-to-collect-hostname-for-google-analyticsga)
 - [TOAST UI Calendar for Vue](/apps/vue-calendar/docs/en/guide/getting-started.md#disable-to-collect-hostname-for-google-analyticsga)
-
-## 📅 Features
-
-### ✨ Monthly, Weekly, Daily and Various View Types
-
-| Monthly | Weekly |
-| --- | --- |
-| ![image](https://user-images.githubusercontent.com/26706716/39230396-4d79a592-48a1-11e8-9849-08e80f1bedf6.png) | ![image](https://user-images.githubusercontent.com/26706716/39230459-83beac38-48a1-11e8-8cd4-11b97817f1f8.png) |
-
-| Daily | 2 Weeks |
-| --- | --- |
-| ![image](https://user-images.githubusercontent.com/26706716/39230685-60a2a1d6-48a2-11e8-9d46-ce5693277a64.png) | ![image](https://user-images.githubusercontent.com/26706716/39230638-281d5266-48a2-11e8-84d8-ab289f372051.png) |
-
-### Easy to Use: Dragging and Resizing a Schedule
-
-| Dragging | Resizing |
-| --- | --- |
-| ![image](https://user-images.githubusercontent.com/26706716/39230930-591031f8-48a3-11e8-8f62-e12e6c19920c.gif) | ![image](https://user-images.githubusercontent.com/26706716/39231671-c926d0da-48a5-11e8-959d-35fd32f2c522.gif) |
-
-### Ready to Use: Default Popups
-
-| Creation Popup | Detail Popup |
-| --- | --- |
-| ![image](https://user-images.githubusercontent.com/26706716/39230798-d151a9ae-48a2-11e8-842d-b19b40432f48.png) | ![image](https://user-images.githubusercontent.com/26706716/39230820-e73fa11c-48a2-11e8-9348-8e3d81979a78.png) |
-
-## 🎨 Other Features
-
-- Supports various view types: daily, weekly, monthly(6 weeks, 2 weeks, 3 weeks)
-- Supports efficient management of milestone and task schedules
-- Supports the narrow width of weekend
-- Supports changing start day of week
-- Supports customizing the date and schedule information UI(including a header and a footer of grid cell)
-- Supports adjusting a schedule by mouse dragging
-- Supports customizing UI by theme
-
-## 💬 Contributing
-
-- [Code of Conduct](/CODE_OF_CONDUCT.md)
-- [Contributing Guidelines](/CONTRIBUTING.md)
-- [Commit Message Convention](/docs/COMMIT_MESSAGE_CONVENTION.md)
-- [Issue Guidelines](/docs/ISSUE_TEMPLATE.md)
 
 ## 🌏 Browser Support
 
@@ -101,23 +40,6 @@ To disable GA, refer to the docs below.
 - [DOMPurify](https://github.com/cure53/DOMPurify)
 - (Optional) [tui-date-picker](https://github.com/nhn/tui.date-picker)
 - (Optional) [tui-time-picker](https://github.com/nhn/tui.time-picker)
-
-## 🍞 TOAST UI Family
-
-- [TOAST UI Grid](https://github.com/nhn/tui.grid)
-- [TOAST UI Chart](https://github.com/nhn/tui.chart)
-- [TOAST UI Editor](https://github.com/nhn/tui.editor)
-- [TOAST UI Image-Editor](https://github.com/nhn/tui.image-editor)
-- [TOAST UI Components](https://github.com/nhn?q=tui)
-
-## 🚀 Used By
-
-- [NHN Dooray! - Collaboration Service (Project, Messenger, Mail, Calendar, Drive, Wiki, Contacts)](https://dooray.com)
-- [NCP - Commerce Platform](https://www.e-ncp.com/)
-- [shopby](https://www.godo.co.kr/shopby/main.gd)
-- [payco-shopping](https://shopping.payco.com/)
-- [iamTeacher](https://teacher.iamservice.net)
-- [linder](https://www.linder.kr)
 
 ## 📜 License
 
