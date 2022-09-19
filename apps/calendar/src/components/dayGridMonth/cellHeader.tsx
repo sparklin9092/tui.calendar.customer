@@ -48,14 +48,6 @@ function getDateColor({
     return today.color;
   }
 
-  if (isSunday(dayIndex)) {
-    return isSameMonth ? holiday.color : holidayExceptThisMonth.color;
-  }
-
-  if (isSaturday(dayIndex)) {
-    return isSameMonth ? saturday.color : dayExceptThisMonth.color;
-  }
-
   if (!isSameMonth) {
     return dayExceptThisMonth.color;
   }

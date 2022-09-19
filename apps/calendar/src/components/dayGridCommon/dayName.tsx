@@ -64,14 +64,6 @@ function getMonthDayNameColor({
   theme: Props['theme'];
 }) {
   const { day } = dayName;
-
-  if (isSunday(day)) {
-    return theme.common.holiday.color;
-  }
-  if (isSaturday(day)) {
-    return theme.common.saturday.color;
-  }
-
   return theme.common.dayName.color;
 }
 
@@ -96,7 +88,6 @@ export function DayName({ dayName, style, type, theme }: Props) {
   return (
     <div className={cls('day-name-item', type)} style={style}>
       <span
-        className={cls({ [`holiday-${getDayName(day)}`]: isWeekend(day) })}
         style={{ color }}
         onClick={handleClick}
         data-testid={`dayName-${type}-${getDayName(day)}`}
