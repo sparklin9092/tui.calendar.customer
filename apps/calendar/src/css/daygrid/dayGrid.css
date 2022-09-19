@@ -35,6 +35,10 @@
   border-left: 1px solid #e5e5e5;
 }
 
+.grid-cell-header {
+  text-align: right;
+}
+
 .grid-cell-date {
   display: inline-block;
   width: 27px;
