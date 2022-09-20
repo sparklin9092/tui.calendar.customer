@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./apps/calendar/dist/toastui-calendar.css">
+    <!-- <link rel="stylesheet" href="./apps/calendar/dist/toastui-calendar.min.css"> -->
+    <!-- <link rel="stylesheet" href="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.css" /> -->
+</head>
+
+<body>
+    <div style="width: 480px;">
+        <div style="text-align: center;">
+            <button type="button" onclick="toPrev()" style="margin-right: 2rem;">&lt;</button>
+            <span id="nowYearMonth"></span>
+            <button type="button" onclick="toNext()" style="margin-left: 2rem;">&gt;</button>
+        </div>
+        <!-- width:height = 4:3 -->
+        <div id="calendar" style="width: 480px; height: 360px;"></div>
+    </div>
+
+    <script type="text/javascript" src="./apps/calendar/dist/toastui-calendar.js"></script>
+    <!-- <script type="text/javascript" src="./apps/calendar/dist/toastui-calendar.min.js"></script> -->
+    <!-- <script src="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.js"></script> -->
+
+    <script type="text/javascript">
+        var calendar;
+        window.onload = function () {
+            const container = document.getElementById('calendar');
+            const options = {
+                defaultView: 'month',
+                month: {
+                    startDayOfWeek: 1
+                }
+            };
+            const Calendar = tui.Calendar;
+            calendar = new Calendar(container, options);
+            renderNowYearMonth();
+        };
+
+        function toPrev() {
+            if (checkYearMonth('-')) {
+                calendar.prev();
+                renderNowYearMonth();
+            }
+        }
+
+        function toNext() {
+            if (checkYearMonth('+')) {
+                calendar.next();
+                renderNowYearMonth();
+            }
+        }
+
+        function checkYearMonth(actSign) {
+            var todayDate = new Date();
+            var thisYear = todayDate.getFullYear();
+            var prevYear = todayDate.getFullYear() - 1;
+            var viewYear = calendar.getDate().getFullYear();
+            var viewMonth = calendar.getDate().getMonth() + 1;
+
+            if ('-' == actSign) //往前一個月
+                if (viewMonth == 1 && (viewYear - 1) < prevYear)
+                    return alert('超過可使用的範圍。');
+                else
+                    return true;
+            else if ('+' == actSign) //向後一個月
+                if (viewMonth == 12 && (viewYear + 1) > thisYear)
+                    return alert('超過可使用的範圍。');
+                else
+                    return true;
+            else
+                return alert('超過可使用的範圍。');
+        }
+
+        function renderNowYearMonth() {
+            document.getElementById('nowYearMonth').textContent = calendar.getDate().getFullYear() + ' ' + calendar.getDate().toString().split(' ')[1].toUpperCase();
+        }
+    </script>
+</body>
+
+</html>
