@@ -11,9 +11,9 @@
 <body>
     <div style="width: 480px;">
         <div style="text-align: center;">
-            <button type="button" onclick="toPrev()" style="margin-right: 2rem;">&lt;</button>
+            <button type="button" onclick="calendar.toPrev()" style="margin-right: 2rem;">&lt;</button>
             <span id="nowYearMonth"></span>
-            <button type="button" onclick="toNext()" style="margin-left: 2rem;">&gt;</button>
+            <button type="button" onclick="calendar.toNext()" style="margin-left: 2rem;">&gt;</button>
         </div>
         <!-- width:height = 4:3 -->
         <div id="calendar" style="width: 480px; height: 360px;"></div>
@@ -24,9 +24,17 @@
     <!-- <script src="https://uicdn.toast.com/calendar/latest/toastui-calendar.min.js"></script> -->
 
     <script type="text/javascript">
+
         var calendar;
+
         window.onload = function () {
-            const container = document.getElementById('calendar');
+            calendar = SFA_Calendar('calendar', 'nowYearMonth');
+        };
+
+        function SFA_Calendar(elementId, elementIdYearMonth) {
+            var calendar;
+
+            const container = document.getElementById(elementId);
             const options = {
                 defaultView: 'month',
                 month: {
@@ -36,45 +44,48 @@
             const Calendar = tui.Calendar;
             calendar = new Calendar(container, options);
             renderNowYearMonth();
-        };
 
-        function toPrev() {
-            if (checkYearMonth('-')) {
-                calendar.prev();
-                renderNowYearMonth();
+            function renderNowYearMonth() {
+                document.getElementById(elementIdYearMonth).textContent = 
+                    calendar.getDate().getFullYear() 
+                    + ' ' 
+                    + calendar.getDate().toString().split(' ')[1].toUpperCase();
             }
-        }
 
-        function toNext() {
-            if (checkYearMonth('+')) {
-                calendar.next();
-                renderNowYearMonth();
+            function checkYearMonth(actSign) {
+                var todayDate = new Date();
+                var thisYear = todayDate.getFullYear();
+                var prevYear = todayDate.getFullYear() - 1;
+                var viewYear = calendar.getDate().getFullYear();
+                var viewMonth = calendar.getDate().getMonth() + 1;
+
+                if ('-' == actSign) //往前一個月
+                    if (viewMonth == 1 && (viewYear - 1) < prevYear)
+                        return alert('超過可使用的範圍。');
+                    else
+                        return true;
+                else if ('+' == actSign) //向後一個月
+                    if (viewMonth == 12 && (viewYear + 1) > thisYear)
+                        return alert('超過可使用的範圍。');
+                    else
+                        return true;
+                else
+                    return alert('超過可使用的範圍。');
             }
-        }
-
-        function checkYearMonth(actSign) {
-            var todayDate = new Date();
-            var thisYear = todayDate.getFullYear();
-            var prevYear = todayDate.getFullYear() - 1;
-            var viewYear = calendar.getDate().getFullYear();
-            var viewMonth = calendar.getDate().getMonth() + 1;
-
-            if ('-' == actSign) //往前一個月
-                if (viewMonth == 1 && (viewYear - 1) < prevYear)
-                    return alert('超過可使用的範圍。');
-                else
-                    return true;
-            else if ('+' == actSign) //向後一個月
-                if (viewMonth == 12 && (viewYear + 1) > thisYear)
-                    return alert('超過可使用的範圍。');
-                else
-                    return true;
-            else
-                return alert('超過可使用的範圍。');
-        }
-
-        function renderNowYearMonth() {
-            document.getElementById('nowYearMonth').textContent = calendar.getDate().getFullYear() + ' ' + calendar.getDate().toString().split(' ')[1].toUpperCase();
+            return {
+                toPrev: () => {
+                    if (checkYearMonth('-')) {
+                        calendar.prev();
+                        renderNowYearMonth();
+                    }
+                },
+                toNext: () => {
+                    if (checkYearMonth('+')) {
+                        calendar.next();
+                        renderNowYearMonth();
+                    }
+                }
+            }
         }
     </script>
 </body>
