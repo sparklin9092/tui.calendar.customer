@@ -26,10 +26,9 @@ export const GridRow = memo(function GridRow({
   contentAreaHeight,
 }: Props) {
   const [container, containerRefCallback] = useDOMNode<HTMLDivElement>();
-  const border = useTheme(useCallback((theme) => theme.common.border, []));
 
   return (
-    <div className={cls('weekday-grid')} style={{ borderTop: border }} ref={containerRefCallback}>
+    <div className={cls('weekday-grid')} ref={containerRefCallback}>
       {week.map((date, columnIndex) => {
         const dayIndex = date.getDay();
         const { width, left } = rowInfo[columnIndex];

@@ -31,10 +31,6 @@
   padding: 3px 0;
 }
 
-.daygrid-cell + .daygrid-cell {
-  border-left: 1px solid #e5e5e5;
-}
-
 .grid-cell-header {
   text-align: right;
 }
