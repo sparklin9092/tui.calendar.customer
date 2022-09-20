@@ -20,7 +20,7 @@ function getMonthDayNames(options: CalendarStore['options']) {
   const dayIndices = [...Array(7)].map((_, i) => (startDayOfWeek + i) % 7);
   const monthDayNames = dayIndices.map((i) => ({
     day: i,
-    label: capitalize(dayNames[i]),
+    label: capitalize(dayNames[i]).toUpperCase(),
   }));
 
   return monthDayNames.filter((dayNameInfo) => (workweek ? !isWeekend(dayNameInfo.day) : true));
