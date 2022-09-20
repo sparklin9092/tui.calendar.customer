@@ -1,4 +1,4 @@
-export const DEFAULT_VISIBLE_WEEKS = 6;
+export const DEFAULT_VISIBLE_WEEKS = 5;
 
 export enum CellBarType {
   header = 'header',
