@@ -12,7 +12,7 @@ export const DEFAULT_COMMON_THEME: DeepRequired<CommonTheme> = {
     color: '#333',
   },
   dayName: {
-    color: '#333',
+    color: '#828282',
   },
   today: {
     color: '#fff',
