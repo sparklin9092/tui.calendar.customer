@@ -104,7 +104,7 @@ export const DEFAULT_MONTH_THEME: DeepRequired<MonthTheme> = {
     color: 'rgba(255, 64, 64, 0.4)',
   },
   dayExceptThisMonth: {
-    color: 'rgba(51, 51, 51, 0.4)',
+    color: 'rgba(225, 225, 225, 0.8)',
   },
   weekend: {
     backgroundColor: 'inherit',
