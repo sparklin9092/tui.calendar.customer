@@ -31,15 +31,3 @@
 .weekday-resize-handle.handle-y {
   cursor: col-resize;
 }
-
-.grid-cell-date .weekday-grid-date.weekday-grid-date-decorator {
-  display: inline-block;
-  width: 26px;
-  height: 26px;
-  line-height: 26px;
-  text-align: center;
-  background-color: #135de6;
-  border-radius: 50%;
-  font-weight: bold;
-  margin-left: 2px;
-}
