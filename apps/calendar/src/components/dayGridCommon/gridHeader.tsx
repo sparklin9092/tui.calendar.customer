@@ -86,6 +86,7 @@ export function GridHeader({
         backgroundColor,
         borderTop,
         borderBottom,
+        marginBottom: '1rem',
       }}
     >
       <div className={cls('day-name-container')} style={{ marginLeft }}>
