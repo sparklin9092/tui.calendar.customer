@@ -17,10 +17,11 @@ import { useTheme } from '@src/contexts/themeStore';
 import { cls } from '@src/helpers/css';
 import { getExceedCount } from '@src/helpers/grid';
 import { useDOMNode } from '@src/hooks/common/useDOMNode';
+import { usePrimaryTimezone } from '@src/hooks/timezone/usePrimaryTimezone';
 import type EventUIModel from '@src/model/eventUIModel';
 import { monthMoreViewSelector } from '@src/selectors/theme';
 import type TZDate from '@src/time/date';
-import { isWeekend } from '@src/time/datetime';
+import { isWeekend, toFormat } from '@src/time/datetime';
 import { getSize } from '@src/utils/dom';
 
 import type { StyleProp } from '@t/components/common';
@@ -211,9 +212,14 @@ export function GridCell({ date, events = [], style, parentContainer, contentAre
     MONTH_EVENT_HEIGHT + MONTH_EVENT_MARGIN_TOP
   );
 
+  const [, getNow] = usePrimaryTimezone();
+  const ymd = toFormat(date, 'YYYYMMDD');
+  const todayYmd = toFormat(getNow(), 'YYYYMMDD');
+  const isToday = ymd === todayYmd;
+
   return (
     <div
-      className={cls('daygrid-cell')}
+      className={cls('daygrid-cell', { 'daygrid-cell-around': isToday })}
       style={{ ...style, backgroundColor: isWeekend(date.getDay()) ? backgroundColor : 'inherit' }}
       ref={containerRefCallback}
     >

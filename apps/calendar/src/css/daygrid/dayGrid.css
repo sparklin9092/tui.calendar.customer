@@ -31,6 +31,11 @@
   padding: 3px 0;
 }
 
+.daygrid-cell-around {
+  border: 1.8px solid silver;
+  border-radius: 5pt;
+}
+
 .grid-cell-header {
   text-align: right;
 }
