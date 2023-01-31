@@ -29,6 +29,25 @@
 
         window.onload = function () {
             calendar = SFA_Calendar('calendar', 'nowYearMonth');
+
+            calendar.create([
+                {
+                    id: '1',
+                    calendarId: '1',
+                    start:'2022-09-01T01:00:00.000Z',
+                    end:'2022-09-01T01:00:00.000Z',
+                    category: 'time',
+                    backgroundColor: 'red',
+                },
+                {
+                    id: '2',
+                    calendarId: '2',
+                    start:'2022-09-01T02:00:00.000Z',
+                    end:'2022-09-01T02:00:00.000Z',
+                    category: 'time',
+                    backgroundColor: 'blue',
+                },
+            ]);
         };
 
         function SFA_Calendar(elementId, elementIdYearMonth) {
@@ -94,6 +113,9 @@
                         calendar.next();
                         renderNowYearMonth();
                     }
+                },
+                create: (event) => {
+                    calendar.createEvents(event);
                 }
             }
         }

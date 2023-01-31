@@ -98,14 +98,6 @@ export function CellHeader({
       <span className={cls('grid-cell-date')} style={gridCellDateStyle}>
         <Template template={monthGridTemplate} param={templateParam} />
       </span>
-      {exceedCount ? (
-        <MoreEventsButton
-          type={type}
-          number={exceedCount}
-          onClickButton={onClickExceedCount}
-          className={cls('grid-cell-more-events')}
-        />
-      ) : null}
     </div>
   );
 }

@@ -65,8 +65,9 @@ function getEventItemStyle({
     borderLeft: exceedLeft ? 'none' : `3px solid ${borderColor}`,
     borderRadius: getBorderRadius(exceedLeft, exceedRight),
     overflow: 'hidden',
-    height: eventHeight,
-    lineHeight: toPx(eventHeight),
+    height: 44,
+    // height: eventHeight,
+    // lineHeight: toPx(eventHeight),
     opacity: isDraggingTarget ? 0.5 : 1,
   };
   const margins = getMargins(flat);
@@ -99,7 +100,7 @@ function getContainerStyle({
     : {
         width: resizingWidth || toPercent(width),
         left: toPercent(movingLeft ?? left),
-        top: (top - 1) * (eventHeight + margins.vertical) + headerHeight,
+        top: 24,
         position: 'absolute',
       };
 
@@ -272,10 +273,12 @@ export function HorizontalEvent({
             style={{ backgroundColor: eventItemStyle.backgroundColor }}
           />
         ) : null}
-        <span className={classNames.eventTitle}>
-          <Template template={uiModel.model.category} param={uiModel.model} />
-        </span>
-        {!shouldHideResizeHandler ? (
+        {!isDotEvent ? (
+          <span className={classNames.eventTitle}>
+            <Template template={uiModel.model.category} param={uiModel.model} />
+          </span>
+        ) : null}
+        {!shouldHideResizeHandler && !isDotEvent ? (
           <HorizontalEventResizeIcon onMouseDown={handleResizeStart} />
         ) : null}
       </div>
